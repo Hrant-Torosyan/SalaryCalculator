@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="box">
+				<div class="nav">
+					<div data-index="registered" class="nav_item active">Գրանցված</div>
+					<div data-index="clean" class="nav_item">Մաքուր</div>
+				</div>
+
+				<p>ԸՆՏՐԵԼ ՏԱՐԲԵՐԱԿԸ</p>
+				<form id="form">
+					<div>
+						<input id="01" type="radio" name="r" value="1" checked />
+						<label for="01">Ընդհանուր հարկման դաշտի սուբյեկտ հանդիսացող կազմակերպություն</label>
+					</div>
+
+					<div>
+						<input id="02" type="radio" name="r" value="2" />
+						<label for="02"> ՏՏ ոլորտի հավաստագրված կազմակերպություն</label>
+					</div>
+
+					<div>
+						<input id="03" type="radio" name="r" value="3" />
+						<label for="03">Միկրոձեռնարկության սուբյեկտ հանդիսացող կազմակերպություն</label>
+					</div>
+				</form>
+			</div>
+			<input id="input" value="100000" class="input_style" type="number" />
+			<div class="info first">
+				<div class="info_item">Եկամտահարկ 20% / ՏՏ 10%</div>
+				<div id="income" class="info_item_number">0</div>
+			</div>
+			<div class="info">
+				<div class="info_item">Սոցիալական վճար</div>
+				<div id="social" class="info_item_number">0</div>
+			</div>
+			<div class="info">
+				<div class="info_item">Դրոշմանիշային վճար</div>
+				<div id="stamp" class="info_item_number">0</div>
+			</div>
+			<div class="info last">
+				<div class="info_item">Մաքուր Մնացորդ</div>
+				<div id="clean" class="info_item_number">0</div>
+			</div>
+			<div class="info_text">
+				<p><span id="sum_info"></span> դրամ աշխատավարձ գրանցելու դեպքում մաքուր կստանաք <span id="clean_info"></span> դրամ:</p>
+				<p>Սոցիալական վճարը` <span id="social_info"></span> դրամ:Եկամտային հարկը կկազմի <span id="income_info"></span> դրամ:</p>
+				<p>
+					Զինծառայողների Ապահովագրության Հիմնադրամի դրոշմանիշային վճարը
+					<span id="stamp_info"></span> դրամ է։
+				</p>
+			</div>
+		</div>
+		<script src="js/main.js"></script>
+	</body>
+</html>

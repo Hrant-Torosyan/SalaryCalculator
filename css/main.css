@@ -1,0 +1,265 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f3f3f3;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+  background: white;
+  height: 100vh;
+  padding: 30px;
+}
+
+.input_style {
+  font-size: 4.2rem;
+  line-height: 5.8rem;
+  font-weight: 400;
+  text-align: right;
+  padding-right: 5px;
+  width: 100%;
+  color: #000b42;
+  letter-spacing: 0.3rem;
+  margin: 5px 0;
+  border: 3px solid #ddd;
+  border-radius: 12px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.info {
+  display: flex;
+  margin-bottom: 2px;
+}
+
+.info_item {
+  overflow: hidden;
+  width: 35%;
+  color: #777;
+  padding: 9px;
+  line-height: 1.7rem;
+  font-weight: 400;
+  text-align: right;
+  font-size: 10px;
+  border: 1px solid #ccc;
+}
+
+.mdl-switch {
+  width: auto;
+  margin-right: 10px;
+}
+
+.info_item_number {
+  overflow: hidden;
+  cursor: copy;
+  width: 65%;
+  text-align: right;
+  overflow: hidden;
+  font-weight: 400;
+  padding: 11px 8px 5px 0;
+  color: #777;
+  letter-spacing: 0.2rem;
+  background: #eee;
+  font-size: 3rem;
+  border-left: 2px solid #fff;
+}
+
+.first div:nth-child(1) {
+  border-radius: 10px 0 0 0;
+}
+
+.first div:nth-child(2) {
+  border-radius: 0 10px 0 0;
+}
+
+.last div:nth-child(2) {
+  border-radius: 0 0 10px 0;
+}
+
+.last div:nth-child(1) {
+  border-radius: 0 0 0 10px;
+}
+
+.info_text span {
+  font-weight: bold;
+}
+
+.info_text p {
+  margin: 0;
+}
+
+.info_text {
+  margin-top: 40px;
+}
+
+.toggler-wrapper {
+  display: block;
+  width: 45px;
+  height: 25px;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggler-wrapper input[type=checkbox] {
+  display: none;
+}
+
+.toggler-wrapper input[type=checkbox]:checked + .toggler-slider {
+  background-color: #44cc66;
+}
+
+.toggler-wrapper .toggler-slider {
+  background-color: #ccc;
+  position: absolute;
+  border-radius: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.toggler-wrapper .toggler-knob {
+  position: absolute;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.toggler-wrapper.style-4 input[type=checkbox]:checked + .toggler-slider .toggler-knob {
+  left: calc(100% - 19px - 3px);
+}
+
+.toggler-wrapper.style-4 .toggler-knob {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 6px rgba(153, 153, 153, 0.75);
+  box-shadow: 0 2px 6px rgba(153, 153, 153, 0.75);
+}
+
+form {
+  --text: #414856;
+  --radio: #7c96b2;
+  --radio-checked: #4f29f0;
+  --radio-size: 20px;
+  --width: 100px;
+  --height: 140px;
+  --border-radius: 10px;
+  position: relative;
+}
+form div {
+  display: flex;
+  margin: 10px;
+}
+form label {
+  cursor: pointer;
+  margin-left: 10px;
+}
+form input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  height: var(--radio-size);
+  width: var(--radio-size);
+  outline: none;
+  margin: 0;
+  cursor: pointer;
+  border: 2px solid var(--radio);
+  background: transparent;
+  border-radius: 50%;
+  display: grid;
+  justify-self: end;
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+  transition: border 0.5s ease;
+}
+form input[type=radio]::before, form input[type=radio]::after {
+  content: "";
+  display: flex;
+  justify-self: center;
+  border-radius: 50%;
+}
+form input[type=radio]::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  z-index: 1;
+  opacity: var(--opacity, 1);
+}
+form input[type=radio]::after {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  background: var(--radio-checked);
+  top: var(--y, 100%);
+  transition: top 0.5s cubic-bezier(0.48, 1.97, 0.5, 0.63);
+}
+form input[type=radio]:checked {
+  --radio: var(--radio-checked);
+}
+form input[type=radio]:checked::after {
+  --y: 0%;
+  animation: stretch-animate 0.3s ease-out 0.17s;
+}
+form input[type=radio]:checked::before {
+  --opacity: 0;
+}
+form input[type=radio]:checked ~ input[type=radio]::after {
+  --y: -100%;
+}
+form input[type=radio]:not(:checked)::before {
+  --opacity: 1;
+  transition: opacity 0s linear 0.5s;
+}
+
+@keyframes stretch-animate {
+  0% {
+    transform: scale(1, 1);
+  }
+  28% {
+    transform: scale(1.15, 0.85);
+  }
+  50% {
+    transform: scale(0.9, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+.nav {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.nav_item {
+  background-color: rgb(221, 221, 221);
+  color: rgb(119, 119, 119);
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  padding: 15px 5px;
+}
+
+.active {
+  background: #000b42;
+  color: #fff;
+}
+
+/*# sourceMappingURL=main.css.map */
